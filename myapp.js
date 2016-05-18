@@ -9,6 +9,10 @@ skycons.add("day3_Icon", Skycons.CLEAR_DAY);
 // start animation!
 skycons.play();
 
+$(document).ready(function(){
+    $(".btn").dropdown();
+});
+
 var ChoiseBtn = $(".btn");
 
 var weather = $("#weather");
