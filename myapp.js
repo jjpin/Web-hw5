@@ -165,4 +165,4 @@ function icon (page){
             skycons.set(dayicon[i], Skycons.CLEAR_DAY);  
         }
       }
-}
+} 
