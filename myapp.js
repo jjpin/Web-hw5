@@ -125,9 +125,17 @@ function icon (page){
         if(daycode === 1 || daycode === 3 || daycode === 4 || daycode === 9 || daycode === 10 || daycode === 11 || daycode === 12 || daycode === 35 || daycode === 37 ||daycode === 38 ||daycode === 39 || daycode === 40 || daycode === 45 ||daycode === 47 || daycode === 48 ){
            skycons.set(dayicon[i], Skycons.RAIN);  
         }
+        //風
+        else if ( daycode === 0 ||daycode === 2 || daycode === 23 || daycode === 24 ||daycode === 25 ){
+           skycons.set(dayicon[i], Skycons.WIND);                 
+        }
         //雲
         else if ( daycode === 26 || daycode === 26 || daycode === 28){
            skycons.set(dayicon[i], Skycons.CLOUDY);               
+        }
+        //下雪
+        else if ( daycode === 13 || daycode === 14 || daycode === 15 || daycode === 16 || daycode === 41 || daycode === 42 || daycode === 43 ||daycode === 46){
+           skycons.set(dayicon[i], Skycons.SNOW);                 
         }
         //太陽
         else if ( daycode === 32 ||daycode === 34 || daycode === 36){
@@ -149,18 +157,11 @@ function icon (page){
         else if ( daycode === 5 || daycode === 6 || daycode === 7 || daycode === 8 || daycode === 17 || daycode === 18){
            skycons.set(dayicon[i], Skycons.SLEET);                
         }
-        //下雪
-        else if ( daycode === 13 || daycode === 14 || daycode === 15 || daycode === 16 || daycode === 41 || daycode === 42 || daycode === 43 ||daycode === 46){
-           skycons.set(dayicon[i], Skycons.SNOW);                 
-        }
-        //風
-        else if ( daycode === 0 ||daycode === 2 || daycode === 23 || daycode === 24 ||daycode === 25 ){
-           skycons.set(dayicon[i], Skycons.WIND);                 
-        }
         //霧
         else if ( daycode === 19|| daycode === 20 || daycode === 21 || daycode === 22){
            skycons.set(dayicon[i], Skycons.FOG);                  
-        }else{
+        }
+        else{
             skycons.set(dayicon[i], Skycons.CLEAR_DAY);  
         }
       }
