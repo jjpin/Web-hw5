@@ -16,6 +16,16 @@
 	background-color: white;
 }
 
+#dropdown{
+	background-color: white;
+	border: 4px double #ffff00;
+}
+
+#dropdown > li > a{
+	text-align: left;
+	color: black;
+}
+
 footer{
 	width: 100%;
 	text-align: right;
@@ -34,8 +44,8 @@ header > h1{
 	margin-left: 30%;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border: 4px dotted #DAD9C3;
-	color: #DAD9C3;
+	border: 4px dotted #B2B298;
+	color: #B2B298;
 	text-align: center;
 }
 
