@@ -9,16 +9,6 @@ skycons.add("day3_Icon", Skycons.CLEAR_DAY);
 // start animation!
 skycons.play();
 
-var ChoiseBtn = $(".btn");
-
-var weather = $("#weather");
-var WeatherCondition;
-
-var day0_date = $("#day0_date");
-var day1_date = $("#day1_date");
-var day2_date = $("#day2_date");
-var day3_date = $("#day3_date");
-
 var day1_Temp = document.getElementById("day1_Temp");
 var day2_Temp = document.getElementById("day2_Temp");
 var day3_Temp = document.getElementById("day3_Temp");
@@ -40,17 +30,15 @@ $.each(cities, function(index, element) {
         city[index]= {data ,"object" : cities[index]};
 
         if(city[index].object === "台北市"){
-
           var cityTemperature = Math.round((current_weather.condition.temp - 32) * 5 / 9 );
           $(".temperature").text(cityTemperature + "℃");
 
-          WeatherCondition = current_weather.condition.text;
-          weather.text(WeatherCondition);
+          $("#weather").text(current_weather.condition.text);
 
-          day0_date.text(current_weather.forecast[0].date);
-          day1_date.text(current_weather.forecast[1].date);
-          day2_date.text(current_weather.forecast[2].date);
-          day3_date.text(current_weather.forecast[3].date);
+          $("#day0_date").text(current_weather.forecast[0].date);
+          $("#day1_date").text(current_weather.forecast[1].date);
+          $("#day2_date").text(current_weather.forecast[2].date);
+          $("#day3_date").text(current_weather.forecast[3].date);
 
           var day1_High = Math.round((current_weather.forecast[1].high - 32) * 5 / 9 );
           var day1_Low = Math.round((current_weather.forecast[1].low - 32) * 5 / 9 );
@@ -85,13 +73,12 @@ $('#dropdown li').on('click', function() {
           var cityTemperature = Math.round((current_weather.condition.temp - 32) * 5 / 9 );
           $(".temperature").text(cityTemperature + "℃");
 
-          WeatherCondition = current_weather.condition.text;
-          weather.text(WeatherCondition);
+          $("#weather").text(current_weather.condition.text);
 
-          day0_date.text(current_weather.forecast[0].date);
-          day1_date.text(current_weather.forecast[1].date);
-          day2_date.text(current_weather.forecast[2].date);
-          day3_date.text(current_weather.forecast[3].date);
+          $("#day0_date").text(current_weather.forecast[0].date);
+          $("#day1_date").text(current_weather.forecast[1].date);
+          $("#day2_date").text(current_weather.forecast[2].date);
+          $("#day3_date").text(current_weather.forecast[3].date);
 
           var day1_High = Math.round((current_weather.forecast[1].high - 32) * 5 / 9 );
           var day1_Low  = Math.round((current_weather.forecast[1].low - 32) * 5 / 9 );
@@ -105,9 +92,8 @@ $('#dropdown li').on('click', function() {
           day3_Temp.innerHTML = day3_Low + "~" + day3_High + '℃';
           //
 
-          var a = Math.round((current_weather.condition.temp - 32) * 5 / 9 );
-          var Choise = city_choise + a + "℃";
-          ChoiseBtn.text(Choise);
+          var city_temperature = Math.round((current_weather.condition.temp - 32) * 5 / 9 );
+          $(".btn").text(city_choise + city_temperature + "℃");
           icon(current_weather);
       }
     }
